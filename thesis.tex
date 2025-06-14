@@ -1,0 +1,179 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+
+% ================================ CLASS OPTIONS ====================================
+% Default setup (recommended):
+\documentclass[a4paper,12pt,oneside]{CityUHKThesis}
+%
+% Alternative setup:
+% twoside: automatically insert a blank verso page
+% fancychap: use fancy chapter title style (Lenny)
+% \documentclass[a4paper,12pt,twoside,fancychap]{CityUHKThesis}
+
+% ================================ LAYOUT & SPACING =================================
+\setlength{\parskip}{.5em}
+\raggedbottom
+
+% ================================ PACKAGE LOADING ==================================
+% Lists and formatting
+\usepackage{enumitem}
+\setlist[enumerate,itemize,description]{topsep=0em}
+
+% Tables and figures
+\RequirePackage[labelsep=period,tableposition=top,labelfont=bf,textformat=period]{caption}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[flushleft]{threeparttable}
+\newcommand{\mtnote}[1]{\textsuperscript{\TPTtagStyle{#1}}}
+
+% ================================ BIBLIOGRAPHY SETUP ===============================
+\usepackage[
+  style=ACM-Reference-Format,
+  citestyle=numeric-comp,
+  backend=biber,
+  sortcites=true,
+  backref=true,
+  doi=false,
+  isbn=false,
+  url=true,
+  eprint=false,
+  maxbibnames=99,
+  maxcitenames=2,
+  giveninits=true
+]{biblatex}
+
+\appto{\bibsetup}{\sloppy}
+\addbibresource{References/references.bib}
+
+% Optimize citation formatting
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+\DeclareFieldFormat{postnote}{#1}
+\DeclareFieldFormat{multipostnote}{#1}
+
+% ================================ CITATION HELPERS =================================
+\usepackage{breakcites}
+\newcommand\spacecite{\penalty700\ \cite}
+
+% ================================ DOCUMENT STRUCTURE ===============================
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+
+% ================================ TYPOGRAPHY =======================================
+\usepackage{microtype}
+\usepackage{underscore}
+
+% Conditional content for development
+\usepackage{lipsum} % Remove in final version
+
+% ================================ MATH & THEOREMS ==================================
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{example}[definition]{Example}
+\newtheorem{remark}[definition]{Remark}
+
+\theoremstyle{plain}
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{proposition}[definition]{Proposition}
+
+% ================================ ALGORITHMS =======================================
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+
+% ================================ DEVELOPMENT HELPERS ==============================
+\newcommand{\fixme}[1]{\textcolor{red}{#1}}
+% \newcommand{\todo}[1]{\textcolor{blue}{\textbf{TODO:} #1}} % Uncomment if needed
+
+% ================================ XETEX SETTINGS ===================================
+\XeTeXgenerateactualtext=1
+
+
+
+% ================================ COMPILATION OPTIMIZATIONS ========================
+\hbadness=999999
+\hfuzz=9999pt
+
+% ================================ GRAPHICS PATH ====================================
+\graphicspath{
+  {FrontMatter/figures/}
+  {Chapters/paperone/figures/}
+  {Chapters/papertwo/figures/}
+  {Chapters/paperthree/figures/}
+}
+
+% ================================ DOCUMENT METADATA ================================
+\title{A Discussion on Higher Education Development in Hong Kong}
+\titlezh{論香港高等教育的發展}
+
+\author{Chan Tai Man}
+\authorzh{陳大文}
+
+\university{City University of Hong Kong}
+\universityzh{香港城市大學}
+\universityabbr{CityU}
+% For joint PhD programme, uncomment the following line
+%\partneruniversity{University of Science and Technology of China}
+
+\dept{Department of Public Policy}
+\deptzh{公共政策學系}
+
+\degreetitle{Doctor of Philosophy} % Master/Doctor of Philosophy as appropriate
+\degreetitlezh{哲學博士學位} % 哲學碩士/博士學位 as appropriate
+\degreetitleabbr{PhD} % MPhil or PhD as appropriate
+
+\degreedate{June 2025} % Available in the AIMS after oral examination
+\degreedatezh{二零二五年六月}
+
+\subject{Ph.D. Thesis}
+\keywords{{keyword one}; {keyword two}; {keyword three}; {keyword four}}
+
+% ================================ DOCUMENT CONTENT ================================
+\begin{document}
+
+\frontmatter
+
+\maketitle
+\cleardoublepageempty
+
+\include{FrontMatter/dedication} % Optional
+\include{FrontMatter/abstract}
+\include{FrontMatter/panel} % Final version only
+\include{FrontMatter/acknowledgement} % Optional
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter
+
+\include{Chapters/introduction}
+
+\cleardoublepage
+\input{Chapters/background}
+
+\cleardoublepage
+\include{Chapters/paperone/paperone}
+
+\cleardoublepage
+\include{Chapters/papertwo/papertwo}
+
+\cleardoublepage
+\include{Chapters/paperthree/paperthree}
+
+\cleardoublepage
+\include{Chapters/relatedwork}
+
+\cleardoublepage
+\include{Chapters/conclusion}
+
+\cleardoublepage
+\phantomsection
+\printbibliography[heading=bibintoc]
+
+\include{Chapters/publications}
+
+\end{document}

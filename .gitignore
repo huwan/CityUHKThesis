@@ -1,0 +1,38 @@
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.idx
+*.ind
+*.ilg
+*.glg
+*.glo
+*.gls
+*.ist
+*.acn
+*.acr
+*.alg
+*.glsdefs
+
+# TeXPad temporary files
+.texpadtmp/
+
+# System files
+.DS_Store
+
+# PDF outputs (optional - comment out if you want to track PDFs)
+# *.pdf
+
+# Backup files
+*~
+*.backup

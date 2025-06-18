@@ -80,7 +80,7 @@ xelatex thesis.tex
 
 ### Online Usage (Overleaf)
 
-CityUHKThesis is available in the Overleaf Gallery: [CityUHKThesis](https://www.overleaf.com/gallery/tagged/cityuhk)
+CityUHKThesis is available in the Overleaf Gallery: [CityUHKThesis](https://www.overleaf.com/latex/templates/cityuhkthesis/jkjvzshqtmgh)
 
 When using online editors:
 1. Ensure XeLaTeX is selected as the compiler

@@ -93,8 +93,8 @@
 \RequirePackage{fontspec}
 \usepackage[T1]{fontenc}
 
-% Chinese support - PMingLiU.ttf is required
-\newfontfamily\mingliu{[PMingLiU.ttf]}
+% Chinese support - PMingLiU.ttf is required (bundled in the project root)
+\newfontfamily\mingliu{PMingLiU}[Path=./,Extension=.ttf]
 \newcommand\chinese[1]{{\mingliu #1}}
 
 \newfontfamily\timesnewroman{Times New Roman}

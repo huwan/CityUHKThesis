@@ -38,11 +38,13 @@ Ensure these fonts are installed system-wide.
 
 ## Quick Start
 
-### Online Usage (Overleaf, Recommended)
+### Online Usage (Recommended)
 
-CityUHKThesis is available in the Overleaf Gallery: [CityUHKThesis](https://www.overleaf.com/latex/templates/cityuhkthesis/jkjvzshqtmgh)
+CityUHKThesis is available in the Overleaf template gallery: [CityUHKThesis](https://www.overleaf.com/latex/templates/cityuhkthesis/jkjvzshqtmgh).
 
-To use online editors, select XeLaTeX as the compiler (refer to this [tutorial](https://www.overleaf.com/learn/how-to/Changing_compiler) if needed).
+You can also manually import this template into online LaTeX editors like [Overleaf](https://www.overleaf.com) or [OpenAI Prism](https://prism.openai.com).
+
+To use online editors, select XeLaTeX as the compiler. For Overleaf, refer to this [tutorial](https://www.overleaf.com/learn/how-to/Changing_compiler) if needed.
 
 ### Document Configuration
 
